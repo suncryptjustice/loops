@@ -1,0 +1,18 @@
+# source
+lib
+index.ts
+package-lock.json
+tslint.json
+tsconfig.json
+.prettierrc
+
+# github
+.github
+
+# misc
+.commitlintrc.json
+.eslintignore
+.eslintrc.js
+docker-compose.yml
+
+.husky/
