@@ -19,6 +19,7 @@ import {
   DeleteContactResponse,
   FindContactResponse,
   SendEventResponse,
+  SendTransactionalEmailResponse,
   UpdateContactResponse,
 } from './types/Response.type';
 
@@ -34,7 +35,7 @@ export class LoopsClientService {
 
   async sendTransactional<T extends Transactional>(
     args: SendTransactionalPayload<T>,
-  ): Promise<SendEventResponse> {
+  ): Promise<SendTransactionalEmailResponse> {
     const options = {
       method: 'POST',
       headers: {
@@ -45,7 +46,7 @@ export class LoopsClientService {
     };
 
     const res = await fetch(`${LOOPS_URL}/transactional`, options);
-    return (await res.json()) as SendEventResponse;
+    return (await res.json()) as SendTransactionalEmailResponse;
   }
 
   async sendEvent(args: SendEventPayload): Promise<SendEventResponse> {
